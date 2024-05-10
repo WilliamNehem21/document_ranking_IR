@@ -480,7 +480,7 @@ def start_normalization_query():
         return "cosine"
 
 def main():
-    """
+    
     # input untuk tipe tf, dft, dan normalisasi untuk dokumen dan query
     tf_doc = start_tf_doc()
     tf_query = start_tf_query()
@@ -512,30 +512,8 @@ def main():
     
     # pemeringkatan dokumen dan nilai relevansinya
     vsm.similarity()
-    """
-    tf_type = ['natural', 'logarithm', 'augmented', 'boolean', 'log_ave']
-    dft_type = ['no', 'idf', 'prob_idf']
-    normalization_type = ['none', 'cosine']
     
-    num = 0
-    path = input("Enter your document path:")
-    query = input("Enter your query:")
     
-    for tf in tf_type:
-        for dft in dft_type:
-            for normalization in normalization_type:
-                for tf_2 in tf_type:
-                    for dft_2 in dft_type:
-                        for normalization_2 in normalization_type:
-                            print(tf, dft, normalization, tf_2, dft_2, normalization_2)
-                            vsm = VSM(path, tf, dft, normalization)
-                            vsm.set_query(query,tf_2, dft_2, normalization_2 )
-                            print("Your query is under process...")
-                            res = vsm.similarity()
-                            if res == 'document_405.txt':
-                                num += 1
-    
-    print(num)
     
    
     
